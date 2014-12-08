@@ -1,0 +1,99 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>CSS Line Height</title>
+  <meta name="description" content="Make CSS line-height behave more like leading ">
+  <meta name="author" content="Sciascia">
+
+  <!--[if lt IE 9]>
+  <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+
+  <style>
+
+    /*layout*/
+    .container {
+      width: 70%;
+      margin: 0 auto;
+    }
+    .group:before,
+    .group:after {
+      content: "";
+      display: table;
+    }
+    .group:after {
+      clear: both;
+    }
+    .group {
+      zoom: 1; /* For IE 6/7 (trigger hasLayout) */
+    }
+    .left {
+      float: left;
+      width: 27%;
+    }
+    .right {
+      float: right;
+      width: 70%;
+    }
+    img {
+      max-width: 100%;
+    }
+
+    /*type*/
+    body {
+      font-family: sans-serif;
+      line-height: 1.8em;
+    }
+    .visually-grouped {
+      margin-top: 3rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+    <h1>Line-height oddities for layout</h1>
+
+    <hr>
+
+    <div class="group">
+      <div class="right">
+        <h2>Headline doesn't line up with image on left out-of-the-box</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+      </div>
+
+      <div class="left">
+        <p>
+          <img src="http://placehold.it/350x150">
+        </p>
+      </div>
+    </div>
+
+    <hr>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+
+    <h2>Headline is not visually grouped with paragraph below</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+
+    <hr>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+
+    <h2 class="visually-grouped">Headline is visually grouped with paragraph below and when on multiple lines, there isn't enough leading between the lines. If more line-height is added, the space between the headline and the paragraph increases requiring the addition of more properties to compensate.</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum rem libero quibusdam delectus quos impedit molestiae inventore, minima deserunt quod beatae magnam suscipit? Libero porro, neque suscipit sint dolorum ducimus.</p>
+
+
+  </div>
+</body>
+</html>
